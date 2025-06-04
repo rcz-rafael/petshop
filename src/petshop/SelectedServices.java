@@ -6,10 +6,10 @@ import java.util.EnumSet;
 
 // Selected_Service options selected by the client.
 
-public class Selected_Services {
+public class SelectedServices {
 	private EnumSet<ServiceType> services;
 	
-	public Selected_Services() {
+	public SelectedServices() {
 		services = EnumSet.noneOf(ServiceType.class);
 	}
 	
