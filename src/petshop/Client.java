@@ -1,5 +1,7 @@
 package petshop;
 
+import java.util.regex.Matcher;
+
 public class Client {
 	private String name;
 	private String phone;
@@ -7,10 +9,10 @@ public class Client {
 	private String email;
 	
 	public Client(String name, String phone, String address, String email) {
-		this.name = name;
-		this.phone = phone;
-		this.address = address;
-		this.email = email;
+		setName(name);
+		setPhone(phone); // use the setter to reuse the validation
+		setAddress(address);
+		setEmail(email); // use the setter to reuse the validation
 	}
 	
 	// getter
@@ -29,26 +31,41 @@ public class Client {
 	public String getEmail() {
 		return email;
 	}
-	
+		
 	// setter
 	public void setName(String name) {
+		if (name == null || name.trim().isEmpty()) {
+			throw new IllegalArgumentException("Name cannot be empty.");
+		}
 		this.name = name;
 	}
 	
 	public void setPhone(String phone) {
+		if (phone == null || !phone.matches("\\d+")) {
+			throw new IllegalArgumentException("Phone must contain only digits.");
+		}
 		this.phone = phone;
 	}
 	
 	public void setAddress(String address) {
+		if (address == null || address.trim().isEmpty()) {
+			throw new IllegalArgumentException("Address cannot be empty.");
+		}
 		this.address = address;
 	}
 	
 	public void setEmail(String email) {
+		if (email == null || !email.matches("^[a-zA-Z][_a-zA-z0-9-\\+]+[]")) {
+			throw new IllegalArgumentException("E-mail must contain '@'.");
+		}
 		this.email = email;
 	}
 	
 	@Override
 	public String toString() {
-		return "Client name: " + name + "\nPhone number: " + phone + "\nAddress: " + address + "\nE-mail: " + email;
+		return "Client name: " + name + 
+				"\nPhone number: " + phone + 
+				"\nAddress: " + address + 
+				"\nE-mail: " + email;
 	}
 }

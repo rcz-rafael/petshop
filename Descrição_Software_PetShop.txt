@@ -1,0 +1,79 @@
+Solicitação de Desenvolvimento de Software - Sistema de Gestão para Pet Shop
+
+Data: 04/06/2025
+Solicitante: Proprietário do Pet Shop
+
+Objetivo:
+Solicito o desenvolvimento de um sistema de gestão completo e moderno para um Pet Shop, que será executado como uma aplicação desktop. O sistema deverá permitir o controle eficiente de clientes, animais, serviços prestados e demais rotinas administrativas. Este projeto será utilizado para fins de portfólio, por isso é fundamental que o sistema tenha uma interface gráfica bem estruturada, intuitiva e visualmente agradável.
+
+Requisitos Gerais:
+- O sistema deverá ser desenvolvido em Java.
+- A interface gráfica deve ser elaborada com JavaFX (preferencial) ou Swing, com design responsivo e organizado.
+- O código deverá ser bem estruturado, utilizando boas práticas de orientação a objetos.
+- Validações básicas devem ser implementadas (ex: não permitir idade negativa, validar e-mail, telefone, etc.).
+- O sistema deve estar preparado para futura integração com banco de dados relacional (SQLite ou MySQL).
+- Separação de responsabilidades usando padrão MVC (Model-View-Controller).
+
+Funcionalidades Esperadas:
+
+1. **Cadastro de Clientes**
+   - Nome completo
+   - Telefone (somente números)
+   - Endereço
+   - E-mail (deve conter “@”)
+   - Possibilidade de adicionar foto do cliente (opcional)
+
+2. **Cadastro de Animais**
+   - Nome
+   - Idade (não pode ser negativa)
+   - Sexo (usar enum: MALE, FEMALE, OTHER)
+   - Raça
+   - Espécie (ex: cão, gato, pássaro)
+   - Peso (opcional)
+   - Foto do animal (opcional)
+   - Relacionamento com o cliente dono
+
+3. **Serviços Oferecidos**
+   - Enumeração de serviços como: Banho, Tosa, Consulta Veterinária, Vacinação, etc.
+   - Cada serviço terá:
+     - Nome
+     - Descrição
+     - Valor
+     - Duração média
+     - Categoria (Higiene, Saúde, Estética)
+
+4. **Atendimento / Agendamento**
+   - Cadastro de atendimento com vínculo ao cliente, animal e serviço prestado
+   - Registro da data e hora do atendimento
+   - Status do atendimento (Agendado, Em andamento, Concluído, Cancelado)
+   - Histórico de atendimentos por cliente e por animal
+   - Tela de agenda semanal com visual estilo calendário
+
+5. **Interface Gráfica**
+   - Telas para cadastro e visualização de clientes, animais, serviços e atendimentos
+   - Design moderno usando JavaFX com:
+     - Cores suaves e harmônicas
+     - Ícones ilustrativos (ex: animal, cliente, serviço)
+     - Cards visuais com informações resumidas
+     - Feedback visual em erros de entrada (ex: campos em vermelho)
+   - Menu lateral para navegação
+   - Tela inicial com dashboard (resumo dos atendimentos do dia, total de animais cadastrados, etc.)
+
+6. **Funcionalidades Complementares**
+   - Tela de login com autenticação básica (usuário/senha)
+   - Backup manual e restauração de dados
+   - Exportação de relatórios (em PDF ou CSV) de clientes, atendimentos e serviços
+   - Sistema de notificações visuais para agendamentos do dia
+   - Local para registrar observações médicas ou de comportamento por animal
+
+Outros Requisitos:
+- Código bem comentado.
+- Organização por pacotes (ex: model, view, controller, enums, util).
+- Estrutura de projeto ideal para demonstrar em entrevistas ou portfólio online.
+
+Observações Finais:
+A prioridade é a qualidade do código, da arquitetura e da interface. Mesmo que o sistema não possua todos os recursos de um software comercial, ele deve se apresentar como uma solução profissional, funcional e esteticamente refinada.
+
+Atenciosamente,
+
+[Assinatura do Dono do Pet Shop]

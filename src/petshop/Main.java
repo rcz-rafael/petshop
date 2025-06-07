@@ -1,36 +1,57 @@
 package petshop;
 
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Lista de serviços disponíveis no petshop:");
-
-        for (ServiceType service : ServiceType.values()) {
-            System.out.println("- " + service.getDescription());
-        }
-
-        // Exemplo: Selecionar alguns serviços
-        SelectedServices selected = new SelectedServices();
-
-        selected.addService(ServiceType.BATH);
-        selected.addService(ServiceType.TEETH_BRUSHING);
-        selected.addService(ServiceType.VACCINATION);
-
-        System.out.println("\nServiços selecionados pelo cliente:");
-        
-        // service.name() retorna o nome da constante (ex: TEETH_BRUSHING)
-        // service.getDescription() retorna o nome legível (ex: "Teeth Brushing")
-        for (ServiceType service : selected.getServices()) {
-            System.out.println("- " + service.getDescription());
-        }
-
-        // Verificando se um serviço está selecionado
-        if (selected.hasService(ServiceType.BATH)) {
-            System.out.println("\nO cliente selecionou banho.");
-        } else {
-            System.out.println("\nO cliente não selecionou banho.");
-        }
 		
+		try (Scanner nw = new Scanner(System.in)) {;
+			
+			System.out.println("Animal registration");
+			System.out.print("Name: ");
+			String nm = nw.next();
+			System.out.print("Age: ");
+			int ag = nw.nextInt();
+			System.out.print("Sex " + java.util.Arrays.toString(Sex.values()) + ": ");
+			String sexInput = nw.next().toUpperCase();
+			
+			Sex sx;
+			try {
+				sx = Sex.valueOf(sexInput);	
+			} catch (IllegalArgumentException e) {
+				System.out.println("Invalid sex. Please use MALE, FEMALE or OTHER.");
+				return;
+			}
+			
+			System.out.print("Breed: ");
+			String br = nw.next();
+			System.out.print("Species: ");
+			String sp = nw.next();
+			System.out.print("Weight: ");
+			double we = nw.nextDouble();
+			System.out.println();
+			
+			Animal animal1 = new Animal(nm, ag, sx, br, sp, we);
+			System.out.println(animal1);
+			System.out.println();
+			
+			System.out.println("Client registration");
+			System.out.print("Name: ");
+			String na = nw.next();
+			System.out.print("Phone: ");
+			String ph = nw.next();
+			System.out.print("Address: ");
+			String ad = nw.next();
+			System.out.print("E-mail: ");
+			String em = nw.next();
+			System.out.println();
+			
+			Client client1 = new Client(na, ph, ad, em);
+			System.out.println(client1);
+		
+		}
+
 	}
 
 }
