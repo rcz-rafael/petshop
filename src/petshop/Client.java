@@ -1,7 +1,5 @@
 package petshop;
 
-import java.util.regex.Matcher;
-
 public class Client {
 	private String name;
 	private String phone;
@@ -55,8 +53,8 @@ public class Client {
 	}
 	
 	public void setEmail(String email) {
-		if (email == null || !email.matches("^[a-zA-Z][_a-zA-z0-9-\\+]+[]")) {
-			throw new IllegalArgumentException("E-mail must contain '@'.");
+		if (email == null || !email.matches("^[a-zA-Z][_a-zA-Z0-9-\\+]+(\\.[_a-zA-Z0-9-\\+]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{2,})$")) {
+			throw new IllegalArgumentException("Invalid email, please check.");
 		}
 		this.email = email;
 	}
@@ -66,6 +64,6 @@ public class Client {
 		return "Client name: " + name + 
 				"\nPhone number: " + phone + 
 				"\nAddress: " + address + 
-				"\nE-mail: " + email;
+				"\nEmail: " + email;
 	}
 }

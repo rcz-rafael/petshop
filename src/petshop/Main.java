@@ -31,6 +31,7 @@ public class Main {
 			System.out.print("Weight: ");
 			double we = nw.nextDouble();
 			System.out.println();
+			nw.nextLine();
 			
 			Animal animal1 = new Animal(nm, ag, sx, br, sp, we);
 			System.out.println(animal1);
@@ -38,11 +39,12 @@ public class Main {
 			
 			System.out.println("Client registration");
 			System.out.print("Name: ");
-			String na = nw.next();
+			String na = nw.nextLine();
 			System.out.print("Phone: ");
 			String ph = nw.next();
+			nw.nextLine();
 			System.out.print("Address: ");
-			String ad = nw.next();
+			String ad = nw.nextLine();
 			System.out.print("E-mail: ");
 			String em = nw.next();
 			System.out.println();
