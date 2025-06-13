@@ -13,6 +13,9 @@ public class Client {
 		setEmail(email); // use the setter to reuse the validation
 	}
 	
+	public Client() {
+	}
+	
 	// getter
 	public String getName() {
 		return name;

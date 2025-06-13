@@ -16,6 +16,11 @@ public class Animal {
 		setSpecies(species);
 		setWeight(weight);
 	}
+	
+	public Animal() {
+		
+	}
+	
 	// getter
 	public String getName() {
 		return name;
@@ -51,7 +56,7 @@ public class Animal {
 	
 	public void setAge(int age) {
 		if (age < 0) {
-			throw new IllegalArgumentException("Age cannot be negative.");
+			throw new IllegalArgumentException("Age must be a number greater than 0.");
 		}
 		this.age = age;
 	}
