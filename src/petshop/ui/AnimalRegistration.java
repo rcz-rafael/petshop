@@ -1,6 +1,8 @@
-package petshop;
+package petshop.ui;
 
+import petshop.model.Animal;
 import java.util.Scanner;
+import petshop.model.Sex;
 
 public class AnimalRegistration {
 

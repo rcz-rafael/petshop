@@ -1,10 +1,16 @@
-package petshop;
+package petshop.ui;
 
+import petshop.model.Client;
 import java.util.Scanner;
+import petshop.dao.ClientDAO;
 
 public class ClientRegistration {
 
 	public static void main(String[] args) {
+		registerClient();
+	}
+	
+	public static void registerClient() {
 		
 		try(Scanner cr = new Scanner(System.in)) {
 			Client client = new Client();
@@ -55,9 +61,11 @@ public class ClientRegistration {
 				}
 			}
 			
+			ClientDAO dao = new ClientDAO();
+			dao.addClient(client);
+			
 			System.out.println("\nClient succesfully registered.");
-			System.out.println(client);
-			System.out.println();
+			
 		}
 
 	}

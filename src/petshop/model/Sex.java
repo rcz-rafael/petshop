@@ -1,4 +1,4 @@
-package petshop;
+package petshop.model;
 
 public enum Sex {
 	MALE("Male"),
