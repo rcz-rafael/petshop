@@ -3,6 +3,7 @@ package petshop;
 import java.util.Scanner;
 import petshop.ui.ClientRegistration;
 import petshop.ui.AnimalRegistration;
+import petshop.ui.ClientRemoval;
 
 public class Main {
 
@@ -23,6 +24,9 @@ public class Main {
 					break;
 				case "2":
 					AnimalRegistration.registerAnimal(sc);
+					break;
+				case "3":
+					ClientRemoval.removeClient(sc);
 					break;
 				case "0":
 					System.out.println("Closing application.");
